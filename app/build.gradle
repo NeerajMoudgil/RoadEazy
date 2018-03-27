@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion rootProject.ext.ANDROID_COMPILE_SDK_VERSION
     defaultConfig {
         applicationId "com.neerajm.roadeazy"
-        minSdkVersion 18
-        targetSdkVersion 26
+        minSdkVersion rootProject.ext.ANDROID_MIN_SDK
+        targetSdkVersion rootProject.ext.ANDROID_TARGET_SDK
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -23,6 +23,11 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     implementation 'com.jakewharton.timber:timber:4.6.1'
+    implementation 'com.flaviofaria:kenburnsview:1.0.7'
+
+    //dagger
+    implementation "com.google.dagger:dagger:${rootProject.ext.DAGGER_VERSION}"
+    annotationProcessor "com.google.dagger:dagger-compiler:${rootProject.ext.DAGGER_VERSION}"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
